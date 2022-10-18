@@ -5,14 +5,13 @@
       "release-type": "simple"
     },
     "frontend": {
-      "release-type": "helm",
-      "changelog-path": "CHANGELOG.md",
+      "release-type": "simple",
       "package-name": "frontend",
       "extra-files": [
           {
               "type": "yaml",
-              "path": "../helm/tim/values.yaml",
-              "jsonpath": "$.frontend.image.tag"
+              "path": "helm/Chart.yaml",
+              "jsonpath": "$.version"
           }
       ]
     },
