@@ -21,8 +21,8 @@
       "extra-files": [
           {
               "type": "yaml",
-              "path": "helm/tim/values.yaml",
-              "jsonpath": "$.backend.image.tag"
+              "path": "helm/Chart.yaml",
+              "jsonpath": "$.version"
           }
       ]
     }
