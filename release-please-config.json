@@ -3,7 +3,8 @@
   "packages": {
     ".": {
       "changelog-path": "CHANGELOG.md",
-      "release-type": "simple"
+      "release-type": "simple",
+      "package-name": "test"
     },
     "frontend": {
       "release-type": "simple",
