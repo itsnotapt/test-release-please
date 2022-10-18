@@ -5,7 +5,28 @@
       "bump-minor-pre-major": false,
       "bump-patch-for-minor-pre-major": false,
       "draft": false,
-      "prerelease": false
+      "prerelease": false,
+      "release-type": "simple"
+    },
+    "frontend": {
+      "release-type": "simple",
+      "extra-files": [
+          {
+              "type": "yaml",
+              "path": "helm/tim/values.yaml",
+              "jsonpath": "$.frontend.image.tag"
+          }
+      ]
+    },
+    "backend": {
+      "release-type": "simple",
+      "extra-files": [
+          {
+              "type": "yaml",
+              "path": "helm/tim/values.yaml",
+              "jsonpath": "$.backend.image.tag"
+          }
+      ]
     }
   },
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
