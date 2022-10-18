@@ -1,0 +1,7 @@
+frontend:
+  image:
+    tag: ""
+
+backend:
+  image:
+    tag: ""
