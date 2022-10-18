@@ -6,4 +6,10 @@ type: application
 
 version: 0.0.1
 
-appVersion: "0.0.1"
+dependencies:
+  - name: frontend
+    version: "0.0.2"
+    repository: "file://../../frontend/helm"
+  - name: backend
+    version: "0.0.2"
+    repository: "file://../../backend/helm"
