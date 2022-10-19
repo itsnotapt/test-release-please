@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.4](https://github.com/itsnotapt/test-release-please/compare/test-v0.0.3...test-v0.0.4) (2022-10-19)
+
+
+### Bug Fixes
+
+* update to code 5 ([84c3c71](https://github.com/itsnotapt/test-release-please/commit/84c3c716d7e6528d24398eb137691c2730c2d663))
+* update to code 6 ([48a1ae8](https://github.com/itsnotapt/test-release-please/commit/48a1ae8809c9797fabceec4fb868385aed38829b))
+
 ## [0.0.3](https://github.com/itsnotapt/test-release-please/compare/test-v0.0.2...test-v0.0.3) (2022-10-19)
 
 
