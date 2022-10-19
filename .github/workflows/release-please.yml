@@ -13,7 +13,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           command: manifest
       - uses: actions/checkout@v2
-      - name: Test
-        run: |
-          echo docker push tag "${{ steps.release.outputs.tag_name }}"
-        if: ${{ steps.release.outputs.release_created }}
+      - run: echo "A release was created."
+        if: ${{ steps.release.outputs.releases_created }}      
+      - run: echo docker push tag "${{ steps.release.outputs['packages/frontend--tag_name'] }}"
+        if: ${{ steps.release.outputs['packages/frontend--release_created'] }}
+      - run: echo docker push tag "${{ steps.release.outputs['packages/backend--tag_name'] }}"
+        if: ${{ steps.release.outputs['packages/backend--release_created'] }}
+      - run: echo helm release "${{ steps.release.outputs['packages/test--tag_name'] }}"
+        if: ${{ steps.release.outputs['packages/test--release_created'] }}
