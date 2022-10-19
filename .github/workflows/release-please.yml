@@ -19,5 +19,5 @@ jobs:
         if: ${{ steps.release.outputs.frontend--release_created }}
       - run: echo docker push tag "${{ steps.release.outputs.backend--tag_name }}"
         if: ${{ steps.release.outputs.backend--release_created }}
-      - run: echo helm release "${{ steps.release.outputs.test--tag_name }}"
-        if: ${{ steps.release.outputs.test--release_created }}
+      - run: echo helm release "${{ steps.release.outputs.tag_name }}"
+        if: ${{ steps.release.outputs.releases_created }}
