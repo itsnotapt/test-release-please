@@ -6,6 +6,12 @@ name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
+    outputs:
+      frontend-release: ${{ steps.release.outputs.frontend--release_created }}
+      frontend-tag: ${{ steps.release.outputs.frontend--tag_name }}
+      backend-tag: ${{ steps.release.outputs.backend--tag_name }}
+      backend-release: ${{ steps.release.outputs.backend--release_created }}
+      core-release: ${{ steps.release.outputs.releases_created }}
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release
@@ -13,11 +19,21 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           command: manifest
       - uses: actions/checkout@v2
-      - run: echo "A release was created."
-        if: ${{ steps.release.outputs.releases_created }}      
-      - run: echo docker push tag "${{ steps.release.outputs.frontend--tag_name }}"
-        if: ${{ steps.release.outputs.frontend--release_created }}
-      - run: echo docker push tag "${{ steps.release.outputs.backend--tag_name }}"
-        if: ${{ steps.release.outputs.backend--release_created }}
-      - run: echo helm release "${{ steps.release.outputs.tag_name }}"
-        if: ${{ steps.release.outputs.releases_created }}
+  build-frontend:
+    runs-on: ubuntu-latest    
+    needs: release-please
+    if: ${{ needs.release-please.frontend-release }}
+    steps:
+      - run: echo docker push ${{ needs.release-please.frontend-tag }}
+  build-backend:
+    runs-on: ubuntu-latest
+    needs: release-please
+    if: ${{ needs.release-please.backend-release }}
+    steps:
+      - run: echo docker push ${{ needs.release-please.backend-tag }}
+  deploy-helm:
+    runs-on: ubuntu-latest
+    needs: [build-frontend, build-backend]
+    if: ${{ needs.release-please.core-release }}
+    steps:
+      - run: echo helm upgrade tim
