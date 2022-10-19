@@ -18,22 +18,21 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           command: manifest
-      - uses: actions/checkout@v2
   build-frontend:
     runs-on: ubuntu-latest    
     needs: release-please
-    if: ${{ needs.release-please.frontend-release }}
+    if: ${{ needs.release-please.outputs.frontend-release }}
     steps:
-      - run: echo docker push ${{ needs.release-please.frontend-tag }}
+      - run: echo docker push ${{ needs.release-please.outputs.frontend-tag }}
   build-backend:
     runs-on: ubuntu-latest
     needs: release-please
-    if: ${{ needs.release-please.backend-release }}
+    if: ${{ needs.release-please.outputs.backend-release }}
     steps:
-      - run: echo docker push ${{ needs.release-please.backend-tag }}
+      - run: echo docker push ${{ needs.release-please.outputs.backend-tag }}
   deploy-helm:
     runs-on: ubuntu-latest
     needs: [build-frontend, build-backend]
-    if: ${{ needs.release-please.core-release }}
+    if: ${{ needs.release-please.outputs.core-release }}
     steps:
       - run: echo helm upgrade tim
