@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.6](https://github.com/itsnotapt/test-release-please/compare/backend-v0.0.5...backend-v0.0.6) (2022-10-19)
+
+
+### Bug Fixes
+
+* update to test code 8 ([5831e74](https://github.com/itsnotapt/test-release-please/commit/5831e74d2e0b445b8facb5d80a87e6a6b73b3906))
+
 ## [0.0.5](https://github.com/itsnotapt/test-release-please/compare/backend-v0.0.4...backend-v0.0.5) (2022-10-19)
 
 
