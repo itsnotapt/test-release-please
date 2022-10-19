@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4](https://github.com/itsnotapt/test-release-please/compare/frontend-v0.0.3...frontend-v0.0.4) (2022-10-19)
+
+
+### Bug Fixes
+
+* update code 4 ([6cc0ee4](https://github.com/itsnotapt/test-release-please/commit/6cc0ee471abddf1d33031aefca2410376ddb8384))
+
 ## [0.0.3](https://github.com/itsnotapt/test-release-please/compare/frontend-v0.0.2...frontend-v0.0.3) (2022-10-19)
 
 
