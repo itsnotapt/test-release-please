@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/itsnotapt/test-release-please/compare/test-v0.1.0...test-v0.1.1) (2022-10-19)
+
+
+### Bug Fixes
+
+* update code 11 ([21b09e8](https://github.com/itsnotapt/test-release-please/commit/21b09e8ecfaf6e10378598af1fe65166bf1e651d))
+
 ## [0.1.0](https://github.com/itsnotapt/test-release-please/compare/test-v0.0.9...test-v0.1.0) (2022-10-19)
 
 
