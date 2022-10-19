@@ -1,0 +1,19 @@
+on:
+   push:
+     branches:
+       - main
+name: release-please
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          command: manifest
+      - uses: actions/checkout@v2
+      - name: Test
+        run: |
+          echo docker push tag "${{ steps.release.outputs.tag_name }}"
+        if: ${{ steps.release.outputs.release_created }}
