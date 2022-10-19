@@ -15,9 +15,9 @@ jobs:
       - uses: actions/checkout@v2
       - run: echo "A release was created."
         if: ${{ steps.release.outputs.releases_created }}      
-      - run: echo docker push tag "${{ steps.release.outputs['packages/frontend--tag_name'] }}"
-        if: ${{ steps.release.outputs['packages/frontend--release_created'] }}
-      - run: echo docker push tag "${{ steps.release.outputs['packages/backend--tag_name'] }}"
-        if: ${{ steps.release.outputs['packages/backend--release_created'] }}
-      - run: echo helm release "${{ steps.release.outputs['packages/test--tag_name'] }}"
-        if: ${{ steps.release.outputs['packages/test--release_created'] }}
+      - run: echo docker push tag "${{ steps.release.outputs.frontend--tag_name }}"
+        if: ${{ steps.release.outputs.frontend--release_created }}
+      - run: echo docker push tag "${{ steps.release.outputs.backend--tag_name }}"
+        if: ${{ steps.release.outputs.backend--release_created }}
+      - run: echo helm release "${{ steps.release.outputs.test--tag_name }}"
+        if: ${{ steps.release.outputs.test--release_created }}
