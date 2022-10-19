@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.8](https://github.com/itsnotapt/test-release-please/compare/test-v0.0.7...test-v0.0.8) (2022-10-19)
+
+
+### Bug Fixes
+
+* update to test code 8 ([5831e74](https://github.com/itsnotapt/test-release-please/commit/5831e74d2e0b445b8facb5d80a87e6a6b73b3906))
+
 ## [0.0.7](https://github.com/itsnotapt/test-release-please/compare/test-v0.0.6...test-v0.0.7) (2022-10-19)
 
 
