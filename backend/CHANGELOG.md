@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0](https://github.com/itsnotapt/test-release-please/compare/backend-v0.0.7...backend-v0.1.0) (2022-10-19)
+
+
+### Features
+
+* update code 10 ([2bdd78c](https://github.com/itsnotapt/test-release-please/commit/2bdd78c3418cbf63af48899a348d52513e4b3bbe))
+
 ## [0.0.7](https://github.com/itsnotapt/test-release-please/compare/backend-v0.0.6...backend-v0.0.7) (2022-10-19)
 
 
